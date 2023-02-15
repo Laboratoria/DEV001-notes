@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import {
   BrowserRouter,
 } from "react-router-dom";
@@ -9,10 +9,12 @@ import Home from './Components/Home.jsx'
 import './index.css'
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </BrowserRouter>
+    </BrowserRouter>,
+    document.getElementById('root')
+
 )
