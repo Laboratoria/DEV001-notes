@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function HomeItems(props) {
     return (
-        <li className="App-lista">
+        <li className="Home-lista">
             <Link to = {props.link}>
                 {props.text}
             </Link>
