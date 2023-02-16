@@ -1,22 +1,37 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 import { React } from "react";
-// import { createRoot } from "react-dom/client";
-import { Routes, Route } from "react-router-dom";
-import './App.css'
-// import { createBrowserRouter, RouterProvider, Route, Link,} from "./componentes/Home";
+// // import { createRoot } from "react-dom/client";
+import { Routes, Route, } from "react-router-dom";
+import './App.css';
 
-const 
-function App(){
-  return (
-    <div className="App">
+import Home from "./componentes/Home";
+import Login from "./componentes/LogIn";
+import Notes from "./componentes/Notes";
+
+function App () {
+  
+  return(
+<div className = "App">
+      <div>
       <Routes>
-        <Route path= '/' element={<Bienvenida />} />
-        <Route path= '/inicio-sesion' element={<Home />} />
+       <Route path= '/' element={<Home />}exact />
+       <Route path= '/login' element={<Login />}exact />
+       <Route path= '/notes' element={<Notes />}exact />
       </Routes>
-        
-    </div>
-  )
+</div>
+</div>
+  ) 
 }
+export default App;
 
-export default App
+//   return(
+//  <BrowserRouter>
+//       <Routes>
+//        <Route path= '/' element={<Home />} />
+//        <Route path= '/login' element={<Login />} />
+//        <Route path= '/notes' element={<Notes />} />
+//       </Routes>
+//     </BrowserRouter>
+
+//   ) 

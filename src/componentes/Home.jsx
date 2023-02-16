@@ -1,1 +1,4 @@
-export const Home = () => <h2>Log In prueba</h2>
+import React  from 'react';
+const Home = () => <h1>Estamos en Home </h1>;
+
+export default Home;
