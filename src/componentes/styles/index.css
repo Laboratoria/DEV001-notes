@@ -1,33 +1,15 @@
+ /* ---------------------------ESTILOS GENERALES -------------------------------- */
 :root {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('./imagen/fondo.jpg');
+  background-image: url('/src/imagen/fondo.jpg');
   background-repeat: no-repeat;
-  background-size:cover;
-  /* height: 800px; */
-  /* position: ; */
-
-  /* background-color: blue; */
-  
-  
-
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%; */
-  
+  background-size:cover;  
 }
+/* -----------------------------PALETA DE COLORES ------------------------------- */
 
+/* -------------------------------ESTILOS LOGIN ---------------------------------- */
 .titulo {
   text-align: center;
   font-size: 30px;
@@ -36,7 +18,7 @@
 .txt {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: black;
-font-size: 25px;
+font-size: 25px; 
 line-height: 1.5;
 text-align: center;
 

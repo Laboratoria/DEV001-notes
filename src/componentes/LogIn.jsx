@@ -2,7 +2,7 @@ import  React  from 'react';
 import { loginWhitGoogle } from "../Firebase/func";
 import { useNavigate } from "react-router-dom";
 // import { logo } from "../assets/logo.jpg";
-// import './App.css';
+// import './styles/login.css';
 
 
 const Login =() => {
@@ -10,7 +10,7 @@ const Login =() => {
   function LoginGogle() {
     loginWhitGoogle ()
     .then ((credentials) =>{
-      console.log(credentials.user)
+      // console.log(credentials.user)
       navigate('/notes')
     })
     .catch((error) =>{
