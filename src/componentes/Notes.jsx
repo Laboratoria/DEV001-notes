@@ -17,9 +17,18 @@ const Notes = () => {
       })
 }
 return (
-  <div>
-  <button onClick={logOut}>Cerrar sesión</button>
-  </div>
+  <React.Fragment>
+  
+   
+
+ 
+  <h2 className='titulo' >Bienvenida name!</h2>
+   <div className='note'>  </div>
+
+   <button onClick={logOut}>Cerrar sesión</button>
+
+</React.Fragment>
+
 )
 }
 export default Notes;
