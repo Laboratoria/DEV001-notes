@@ -1,5 +1,5 @@
 import  React  from 'react';
-import { loginWhitGoogle } from "../Firebase/func";
+import { loginWhitGoogle } from "./Firebase/func";
 import { useNavigate } from "react-router-dom";
 // import { logo } from "../assets/logo.jpg";
 // import './styles/login.css';
@@ -29,7 +29,7 @@ tareas pendientes, lista de compras  etcétera <br/>
 Yo te ayudo!
 </p>
 
-  <button onClick={LoginGogle}>Ingresa con Google</button>
+  <button className='btnGoogle' onClick={LoginGogle}>Ingresa con Google</button>
   </div>
 </React.Fragment>
 
