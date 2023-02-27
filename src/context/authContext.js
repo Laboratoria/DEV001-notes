@@ -1,7 +1,8 @@
 import { createContext, useContext} from 'react';
 import { 
     GoogleAuthProvider,
-    signInWithPopup
+    signInWithPopup,
+    signOut
 } from 'firebase/auth';
 import { auth } from '../firebase'
 
@@ -18,12 +19,16 @@ const loginWithGoogle = () => {
     return signInWithPopup(auth, googleProvider)
 }
 
+export const logOut = () => {
+    return signOut(auth)
+}
+
 export function AuthProvider({ children }) {
     const user = {
         login: true,
     }
     return (
-        <authContext.Provider value={{ user, loginWithGoogle}}>
+        <authContext.Provider value={{ user, loginWithGoogle, logOut}}>
             {children}
         </authContext.Provider>
     )

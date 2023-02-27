@@ -1,0 +1,42 @@
+.divprin{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 15%;
+    background-color: rgb(248, 249, 251);
+}
+h1 {
+    font-size: 70px;
+    text-align: center;
+
+}
+.imgnote {
+    display: flex;
+ width: 30%;
+ margin: auto;
+ text-align: center;
+}
+
+p {
+    display: flex;
+    text-align: center;
+    font-weight: 625;
+    font-size: 25px;
+    color: #68696E;
+}
+
+.btn {
+    display: flex;
+    font-size: 35px;
+    padding-top: 12px;
+padding-left: 100px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+width: 50%;
+height: 70px;
+background-color: white;
+border-color: #68696E;
+border-radius: 10px;
+margin-top: 80px;
+margin-bottom: 100px;
+}
