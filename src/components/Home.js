@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/authContext';
-
+import styles from '../estilos/Home.module.css';
 
 
 export function Home() {
@@ -15,13 +15,14 @@ export function Home() {
     }
     
     return (
-        <div>
-            <h1 align = 'center'>Notes</h1>
-            <h2 align='center'>Lets Get Strated</h2>
-            <p align='center'>Get organized, get inspired, remember things
+        <div className = { styles.divprin}>
+            <h1>Notes</h1>
+            <img className= { styles.imgnote } src="https://images.vexels.com/media/users/3/146633/isolated/preview/236b135edbfb0ac9504b6a3090866459-nota-adhesiva-azul-con-clip.png" alt='icono de notas'/>
+            <p>Get organized, get inspired, remember things
                 from the hand of notes</p>
-            <button onClick={handleGoogleSignin} align='center'>Google Login</button>
-            <img src= '../imagenes/post-verde.png' alt = 'imagen de una nota con un lápiz'/>
+            <button type = 'button' className={styles.btn } onClick={handleGoogleSignin}>Google Login</button>
+           
+
         </div >
     )
     
