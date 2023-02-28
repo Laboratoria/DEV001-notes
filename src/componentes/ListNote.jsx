@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
  import { db } from "../Firebase/Configuracion";
-  import { collection, getDocs, doc, deleteDoc,
+  import { collection, getDocs, doc, deleteDoc, getDoc
           // getFirestore, addDocs, getDoc, doc,  setDoc, 
   } from "firebase/firestore";
 
   export function ListNotes (){
   // variables de estado
   const  [lista, setLista] = useState([])
+  // const [user, setUser] = useState (valorInicial)
   const [render, setRender] = useState(false) 
-  const [subId, setSubId] = useState ('') 
+  // const [subId, setSubId] = useState ('') 
+  // const [save, setSave] = useState(false)
   // 
 
 
@@ -20,7 +22,7 @@ useEffect (() =>{
 
     try {
       // Hace la peticion a la base de datos  (getdocs trae la coleccion de usuario)
-    const querySnapshot = await getDocs(collection(db, 'usuarios'))
+    const querySnapshot = await getDocs(collection(db, 'usuarios'));
     const docs = []
     querySnapshot.forEach((doc)=> {
       docs.push({...doc.data(), id:doc.id})
@@ -41,7 +43,7 @@ useEffect (() =>{
    
 },[render])
 
-
+// },[])
 
 // Funcion para eliminar Notas
 const delateNote = async (id) => {
@@ -67,14 +69,15 @@ const delateNote = async (id) => {
 
 
 return (
+
   <div> {
     lista.map(list => (
       <div key = {list.id}>
-        <p>{`${list.docs}`}</p>
+        <p>{`${list.textarea}`}</p>
         {/* console.log({list.doc},'Prueba'); */}
         {/* <p>{list.usurios}</p>  */}
         <button className="btn-delate" onClick={() => delateNote(list.id)}>Eliminar</button>
-        {/* <button className="edit" onClick={() => setSubId (list.!!!docs)}>Editar</button> */}
+        <button className="edit" onClick={() => setSubId (list.textarea)}>Editar</button>
         <hr/>
       </div>
     ))

@@ -1,5 +1,5 @@
-  import { useState } from "react";
-  import { collection, addDoc, setDoc, doc
+  import React, { useState } from "react";
+  import { collection, addDoc, 
           // getDocs, getFirestore, addDocs, getDoc, doc, delateDoc, setDoc,
   } from "firebase/firestore";
   import { db } from "../Firebase/Configuracion";
@@ -25,7 +25,6 @@ const capturaValue = (e) => {
 // funcion para guardar y actualizar  la informacion del textarea
 const saveData = async (e) =>{
   e.preventDefault();
-  console.log(user);
   if(subId === ''){
  try {
     await addDoc(collection(db,'usuarios'), {
@@ -34,10 +33,7 @@ const saveData = async (e) =>{
   } catch (error) {
     console.log(error)
   }
-
-  
 }
-
 else {
   await setDoc(doc(db, 'usuarios', subId),{
     ...user
@@ -49,11 +45,11 @@ setSubId('')
 
 
 return (
-  <>
+
   <form name="formNote" onSubmit={saveData} >
 <textarea className='spaceNote' name='textarea' placeholder='Agrega tu nota' onChange={capturaValue} value ={user.nombre} ></textarea>
-<button className= 'btn'> Guardar </button>
+<button type= "submit" className= 'btn'> Guardar </button>
   </form>
-</>
+
 )
   }
