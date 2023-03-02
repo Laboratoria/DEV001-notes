@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import WallForm from './wallForm';
-import { collection, addDoc, query, onSnapshot, deleteDoc, doc, updateDoc} from "firebase/firestore";
+import { collection, addDoc, query, onSnapshot, deleteDoc, doc, setDoc} from "firebase/firestore";
 import styles from '../estilos/Wall.module.css';
 import db from "../firebase";
 import { toast } from 'react-toastify';
@@ -10,8 +10,8 @@ const WallLink = () => {
     const [notes, setNotes] = useState([]);
     // guardo en el estado en string vacion y se guarda el estado actual y su metodo para actualizarse
     const [currentId, setCurrentId] = useState('');
-
-    const addOrEditNote = async (textObject, newFields) => {
+   
+    const addOrEditNote = async (textObject, newfields) => {
         if (currentId === '') {
             // si current id es vacio, entonces agrega una nota
             await addDoc(collection(db, 'notes'), { textObject })
@@ -22,16 +22,14 @@ const WallLink = () => {
             }); 
             // el ese actualiza la nota
         } else {
-            await updateDoc(textObject(db, 'notes', currentId), newFields);
+            await setDoc(doc(db, 'notes', currentId), {textObject});
             toast('Updated note', {
                 type: 'info',
                 theme: 'colored',
                 autoClose: 1500
             }); 
             setCurrentId('');
-        }
-        
-       
+        } 
     };
 // funcion que hace una peticion desde firebase para elminar
     
@@ -66,11 +64,9 @@ const WallLink = () => {
     
 // useEffect tiene una funcion dentro y recibe como segundo parametro un arreglo con los datos que van cambiando
     useEffect(() => {
-        
-        getNotes();
+         getNotes();
         // eslint-disable-next-line
     }, [])
-
 
     return (<div className={styles.formnotes}>
         <div>

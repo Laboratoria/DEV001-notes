@@ -16,7 +16,7 @@ form{
 input{
     outline: none;
         border: 0;
-        background-color: #EEECEC;
+        background-color: inherit;
         width: 70%;
         margin-left: 5px;
 }
@@ -24,7 +24,7 @@ input{
 textarea{
     outline: none;
         border: 0;
-        background-color: #EEECEC;
+        background-color: inherit;
        height:100px;
        width: 70%;
        margin-left: 5px;

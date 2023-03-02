@@ -3,6 +3,7 @@ import styles from '../estilos/Wall.module.css';
 import  db  from "../firebase";
 import { getDoc, doc } from 'firebase/firestore';
 
+
 const WallForm = (props) => {
 
     const initialStateValues = {
@@ -11,7 +12,7 @@ const WallForm = (props) => {
     }
 
     const [values, setValues] = useState(initialStateValues);
-
+    
     const handleInputChange = e => {
         const { name, value } = e.target;
         // evento que imprime la informacion evento por medio del e.target
@@ -27,7 +28,7 @@ const WallForm = (props) => {
 
     const getNoteById = async (id) => {
         const note = await getDoc(doc(db, 'notes', id))
-        setValues({...note.data(id)})
+        setValues({...note.data().textObject})
         console.log(note.data(id));
     }
 // validacion, cuando cargue que haga la validacion del id actual 'props.currentId' es igual a  '' sig que esta actualizando y no guardando
@@ -40,15 +41,16 @@ const WallForm = (props) => {
         }
         // eslint-disable-next-line 
     }, [props.currentId]);
+
     return (
         <form onSubmit={handleSubmit} className="form">
             <div className={styles.titletext }>
             <div className="divTitle">
-                <input type="text" onChange={handleInputChange} name='title' defaultValue={ values.title} placeholder="Title"></input>
+                <input value={values.title} type="text" onChange={handleInputChange} name='title' placeholder="Title"></input>
             </div>
-            <div className="divtext">
-                <textarea onChange={handleInputChange} name='description' defaultValue={values.description} placeholder="Your text here..." ></textarea>
-            </div>
+                <div className="divtext">
+                    <textarea value={values.description } onChange={handleInputChange} name='description'  placeholder="Your text here..." ></textarea>
+                </div>
                 <button className={styles.savebutton}>
                     {props.currentId === '' ? 'Save' : 'update'}
                 </button>

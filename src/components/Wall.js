@@ -20,12 +20,12 @@ export function Wall() {
     return (
         <div className={styles.divprincipal}>
             <div className={styles.container}>
-                <h2>Bienvenido a Notes</h2>
+                <h2>Welcome to Notes</h2>
                 
             <WallLink />  
           </div>
            <ToastContainer />
-        <button onClick={handleSignOut} className={styles.logout}>Exit</button>
+        <button onClick={handleSignOut} className={styles.logout}>Logout</button>
     </div>
     
     );
