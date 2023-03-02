@@ -1,0 +1,92 @@
+
+.divprincipal{
+    display:grid;
+    flex-direction: row;
+}
+
+form{
+    display: grid;
+        background-color: #EEECEC;
+        border-radius: 15px;
+        width: 70%;
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-bottom: 30px;
+}
+input{
+    outline: none;
+        border: 0;
+        background-color: inherit;
+        width: 70%;
+        margin-left: 5px;
+}
+
+textarea{
+    outline: none;
+        border: 0;
+        background-color: inherit;
+       height:100px;
+       width: 70%;
+       margin-left: 5px;
+}
+.savebutton {
+    display: flex;
+    border-radius: 7px;
+    width: 50px;
+  margin-left: 75%;
+
+ }
+
+.rendertitleandnote{
+    display: grid;
+    margin: 15px;
+    gap: 2rem;
+        grid-auto-rows: 10rem;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    
+}
+.rendernote{
+    display: grid;
+   background-color: #EEECEC;
+    border-radius: 15px;
+    width: auto;
+    height: auto;
+  
+}
+.titleanddeleteicon {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+h2{
+    margin: 0px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+p{
+    margin: 0px;
+    margin-left: 5px;
+}
+.editicon{
+    width: 25px;
+        height: 25px;
+        margin-right: 15px;
+        
+}
+.deleteicon {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+}
+
+.logout{
+    
+}
+/* border-width: 1px;
+border-style: solid;
+border-color: #68696E; */
+;
