@@ -5,23 +5,32 @@ import {
   getDocs,
   doc,
   deleteDoc,
-  // getFirestore, addDocs, getDoc, doc,  setDoc,
+  query,
+  where,
 } from 'firebase/firestore';
 import { FormNotes } from '../componentes/FormNotes';
 
-export function ListNotes() {
+export function ListNotes({ uid }) {
+  console.log(uid, 'PRUEBA2');
   // variables de estado
   // en ese estado vamos a manejar el estado de una nota que esta siendo creada o editada
-  const [notaGuardada, setNotaGuardada] = useState({ id: '', textarea: '' });
+  const [notaGuardada, setNotaGuardada] = useState({
+    id: '',
+    uid: '',
+    textarea: '',
+  });
   const [lista, setLista] = useState([]);
   const [render, setRender] = useState(false); // Se encarga de renderizar
 
   // Funcion que trae las notas
-  const getLista = async () => {
+  const getLista = async (id) => {
     try {
       // Hace la peticion a la base de datos  (getdocs trae la coleccion de usuario)
-      const querySnapshot = await getDocs(collection(db, 'usuarios'));
+      const notesRef = collection(db, 'usuarios');
+      const q = query(notesRef, where('uid', '==', id));
+      const querySnapshot = await getDocs(q);
       const docs = [];
+
       querySnapshot.forEach((doc) => {
         docs.push({ ...doc.data(), id: doc.id });
         console.log(docs);
@@ -30,33 +39,27 @@ export function ListNotes() {
     } catch (error) {
       console.log(error);
     }
+    // setRender(true);
   };
-
   // Funcion para renderizar lista de usuarios
   useEffect(() => {
-    console.log('Renderiza');
-    getLista();
+    console.log(uid, 'prueba');
+    getLista(uid);
     // dependencia de variable de estado
     // agrega elemento a la lista cada que hay un cambio
     setRender(false);
   }, [render]);
-
-  //
-  // const unsub = onSnapshot(doc(db, "usuarios"), (doc) => {
-  //     console.log("Current data: ", doc.data());
-  // });
-
   // Funcion para eliminar Notas
   const delateNote = async (id) => {
     setRender(true);
     await deleteDoc(doc(db, 'usuarios', id));
   };
-  // console.log(uid);
+  console.log(uid, 'uid');
 
   return (
     <div>
       <FormNotes
-        // uid={uid}
+        uid={uid}
         notaGuardada={notaGuardada}
         setNotaGuardada={setNotaGuardada}
       />
@@ -76,3 +79,7 @@ export function ListNotes() {
     </div>
   );
 }
+
+// const unsub = onSnapshot(doc(db, "usuarios"), (doc) => {
+//     console.log("Current data: ", doc.data());
+// });

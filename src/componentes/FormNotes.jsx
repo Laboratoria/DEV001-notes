@@ -4,18 +4,21 @@ import {
   addDoc,
   setDoc,
   doc,
-  // collection,
-  // query,
-  // where,
+  query,
+  where,
 } from 'firebase/firestore';
 import { db } from '../Firebase/Configuracion';
+// import { contextoNotas } from '../context/noteContext';
 
-export function FormNotes({ notaGuardada, setNotaGuardada }) {
-  console.log(notaGuardada, 'notaGuardada');
+export function FormNotes({ notaGuardada, setNotaGuardada, uid }) {
+  //Lo que se trae del contexto
+  // const { uid } = contextoNotas();
+  // console.log(uid, 'UID PRUEBA');
+  // console.log(notaGuardada, 'notaGuardada');
   // Funcion que captura el valor de texTarea
   const capturaValue = (e) => {
     const { value } = e.target;
-    setNotaGuardada((prevState) => ({ ...prevState, textarea: value }));
+    setNotaGuardada((prevState) => ({ ...prevState, textarea: value, uid }));
   };
 
   // funcion para guardar y actualizar  la informacion del textarea
@@ -23,6 +26,8 @@ export function FormNotes({ notaGuardada, setNotaGuardada }) {
     e.preventDefault();
     if (notaGuardada.id === '') {
       try {
+        //  uid
+
         await addDoc(collection(db, 'usuarios'), {
           ...notaGuardada,
         });
@@ -48,7 +53,7 @@ export function FormNotes({ notaGuardada, setNotaGuardada }) {
       <button
         type="button"
         className="btn"
-        onClick={() => setNotaGuardada({ id: '', textarea: '' })}
+        onClick={() => setNotaGuardada({ id: '', uid: '', textarea: '' })}
       >
         {' '}
         {'Cancelar'}
@@ -56,7 +61,9 @@ export function FormNotes({ notaGuardada, setNotaGuardada }) {
       <button
         type="submit"
         className="btn"
-        onClick={() => setNotaGuardada({ id })}
+        onClick={() =>
+          setNotaGuardada({ textarea: notaGuardada.textarea, uid: uid })
+        }
       >
         {' '}
         {notaGuardada.id ? 'Actualizar' : 'Guardar'}
@@ -64,22 +71,3 @@ export function FormNotes({ notaGuardada, setNotaGuardada }) {
     </form>
   );
 }
-
-// }
-
-// ---------FUNCION PARA GUARDAR COLECCION POR USUARIO  -----------------
-// const guardarData = (e) =>{
-//   e.preventDefault();
-//   saveData (userUid, { ...user});
-//   // getNotes();
-//   setUser({ ...valorInicial});
-
-//   try{
-//     await addDoc(collection(db,'usuarios'), {
-//       ...user
-//   })
-//   } catch (error) {
-//     console.log(error)
-//   }
-// setUser({ ...valorInicial}
-// }
