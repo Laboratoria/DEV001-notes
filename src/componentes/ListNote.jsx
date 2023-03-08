@@ -7,11 +7,11 @@ import {
   deleteDoc,
   query,
   where,
+  // onSnapshot,
 } from 'firebase/firestore';
 import { FormNotes } from '../componentes/FormNotes';
 
 export function ListNotes({ uid }) {
-  console.log(uid, 'PRUEBA2');
   // variables de estado
   // en ese estado vamos a manejar el estado de una nota que esta siendo creada o editada
   const [notaGuardada, setNotaGuardada] = useState({
@@ -28,33 +28,35 @@ export function ListNotes({ uid }) {
       // Hace la peticion a la base de datos  (getdocs trae la coleccion de usuario)
       const notesRef = collection(db, 'usuarios');
       const q = query(notesRef, where('uid', '==', id));
+      // const q = query(collection(db, 'cities'), where('capital', '==', true));
       const querySnapshot = await getDocs(q);
+      console.log(querySnapshot, 'QUERY');
       const docs = [];
 
       querySnapshot.forEach((doc) => {
         docs.push({ ...doc.data(), id: doc.id });
-        console.log(docs);
+        console.log(docs, 'docs');
       });
       setLista(docs);
+      setRender(true);
     } catch (error) {
       console.log(error);
     }
-    // setRender(true);
   };
   // Funcion para renderizar lista de usuarios
   useEffect(() => {
-    console.log(uid, 'prueba');
+    console.log('Renderiza');
     getLista(uid);
+    console.log(getLista, 'GetListaUSE');
     // dependencia de variable de estado
     // agrega elemento a la lista cada que hay un cambio
-    setRender(false);
+    // setRender(false);
   }, [render]);
   // Funcion para eliminar Notas
   const delateNote = async (id) => {
     setRender(true);
     await deleteDoc(doc(db, 'usuarios', id));
   };
-  console.log(uid, 'uid');
 
   return (
     <div>

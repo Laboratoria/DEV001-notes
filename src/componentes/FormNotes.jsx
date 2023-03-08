@@ -1,20 +1,8 @@
 import React from 'react';
-import {
-  collection,
-  addDoc,
-  setDoc,
-  doc,
-  query,
-  where,
-} from 'firebase/firestore';
+import { collection, addDoc, setDoc, doc } from 'firebase/firestore';
 import { db } from '../Firebase/Configuracion';
-// import { contextoNotas } from '../context/noteContext';
 
 export function FormNotes({ notaGuardada, setNotaGuardada, uid }) {
-  //Lo que se trae del contexto
-  // const { uid } = contextoNotas();
-  // console.log(uid, 'UID PRUEBA');
-  // console.log(notaGuardada, 'notaGuardada');
   // Funcion que captura el valor de texTarea
   const capturaValue = (e) => {
     const { value } = e.target;
@@ -34,6 +22,7 @@ export function FormNotes({ notaGuardada, setNotaGuardada, uid }) {
       } catch (error) {
         console.log(error);
       }
+      // ... notaGuardada
     } else {
       await setDoc(doc(db, 'usuarios', notaGuardada.id), {
         ...notaGuardada,
@@ -61,9 +50,7 @@ export function FormNotes({ notaGuardada, setNotaGuardada, uid }) {
       <button
         type="submit"
         className="btn"
-        onClick={() =>
-          setNotaGuardada({ textarea: notaGuardada.textarea, uid: uid })
-        }
+        onClick={() => setNotaGuardada({ ...notaGuardada })}
       >
         {' '}
         {notaGuardada.id ? 'Actualizar' : 'Guardar'}

@@ -11,7 +11,7 @@ const Notes = () => {
 
   const auth = getAuth();
   onAuthStateChanged(auth, (user) => {
-    console.log(user);
+    // console.log(user);
     // uid = user.uid;
     setUid(() => {
       return user.uid;
