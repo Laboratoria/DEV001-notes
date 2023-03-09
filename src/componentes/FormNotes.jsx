@@ -6,25 +6,34 @@ export function FormNotes({ notaGuardada, setNotaGuardada, uid }) {
   // Funcion que captura el valor de texTarea
   const capturaValue = (e) => {
     const { value } = e.target;
-    setNotaGuardada((prevState) => ({ ...prevState, textarea: value, uid }));
+    setNotaGuardada((prevState) => ({
+      ...prevState,
+      textarea: value,
+      uid,
+    }));
   };
 
   // funcion para guardar y actualizar  la informacion del textarea
   const saveData = async (e) => {
     e.preventDefault();
+    const newNote = {
+      uid: uid,
+      textarea: notaGuardada.textarea,
+      timestamp: new Date().getTime(),
+    };
     if (notaGuardada.id === '') {
       try {
-        await addDoc(collection(db, 'usuarios'), {
-          ...notaGuardada,
-        });
+        await addDoc(collection(db, 'usuarios'), newNote);
+        setNotaGuardada({ id: '', uid: '', textarea: '' });
+        console.log(newNote, 'nueva nota');
       } catch (error) {
         console.log(error);
       }
     } else {
-      await setDoc(doc(db, 'usuarios', notaGuardada.id), {
-        ...notaGuardada,
-      });
+      await setDoc(doc(db, 'usuarios'), newNote);
+      setNotaGuardada({ id: '', uid: '', textarea: '' });
     }
+    // setNotaGuardada({ id: '', uid: '', textarea: '' });
   };
 
   return (

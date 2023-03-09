@@ -101,21 +101,58 @@ h1 {
 /* } */
 
 /* -------- ESTILOS MURO --------  */
-.note {
-width: 300px;
-height: 80px;
-padding-bottom: 100px;
+.content{
+  display: flex;
+  position: relative;
+  flex-direction:row;
+  align-items: end;
+  /* position: center; */
+}
+
+.btn-delate, 
+.edit,
+.btn{
+  font-size: 15px;
+  border-radius: 2px;
+  border: 2px solid var(--mar);
+
+
+}
+.btn-delate,
+.edit,
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 12px 16px 0 rgba(39, 133, 155, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+/* .divHijo{
+display: flex;
+position: absolute;
+  flex-direction: row;
+  margin: auto;
+  left: 0;
+  right: 0;
+
+
+} */
+.contenido-nota {
+  padding: 4em;
 border: transparent;
 background-color:#e7e1a9;
+border-radius: 10px;
 color: black;
 font-size: 16px;
 }
-.container{
+
+.btn-content{
   display: flex;
-  justify-content: center;
-  /* background-color:var(#ded7b7); */
-  background-color:transparent;
+  position:absolute;
 }
+.spaceNote{
+  padding: 15%;
+  border-radius: 5%;
+
+}
+
 .signOut{
 border-radius: 8px;
 position: relative;
@@ -139,6 +176,13 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
 /* signOut:hover {  
 border-color: black;
+} */
+/* -----------------------------NOTAS ---------------- */
+/* .body-nota{
+  display: flex;
+  flex-direction: row;
+  background-color: #6587a5;
 } */
