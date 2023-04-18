@@ -1,0 +1,19 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    color-scheme: light dark;
+    background-color: rgba(34, 46, 94, 1);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    margin-top: 0;
+    padding: 0;
+  }
+
+@media (prefers-color-scheme: light) {
+     :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+}
