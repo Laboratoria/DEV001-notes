@@ -10,8 +10,11 @@ import {
   orderBy,
 } from 'firebase/firestore';
 import { FormNotes } from '../componentes/FormNotes';
+import '../styles/ListNote.css';
 
 export function ListNotes({ uid }) {
+  console.log('render ListNotes');
+
   // variables de estado
   // en ese estado vamos a manejar el estado de una nota que esta siendo creada o editada
   const [notaGuardada, setNotaGuardada] = useState({
@@ -28,13 +31,13 @@ export function ListNotes({ uid }) {
     const notesRef = collection(db, 'usuarios');
     const q = query(
       notesRef,
-      where('uid', '==', id),
-      orderBy('timestamp', 'desc')
+      where('uid', '==', id)
+      // orderBy('timestamp', 'desc')
     );
     return onSnapshot(q, (querySnapshot) => {
       const docs = [];
       querySnapshot.forEach((doc) => {
-        console.log(doc);
+        // console.log(doc);
         docs.push({ ...doc.data(), id: doc.id });
       });
       console.log(docs, 'docs');
@@ -66,21 +69,44 @@ export function ListNotes({ uid }) {
         notaGuardada={notaGuardada}
         setNotaGuardada={setNotaGuardada}
       />
-      {lista.map((note) => (
-        <div key={note.id} className="content">
-          <div className="divHijo">
-            <p className="contenido-nota">{`${note.textarea}`}</p>
+      <br />
+      <br />
+      <div className="pruebita">
+        {lista.map((note) => (
+          <div key={note.id} className="content">
+            <div className="divNota">
+              <p className="contenido-nota">
+                {`${note.textarea}`}
+                <br />
+                <br />
+
+                {/* <div className="divBtnNota"> */}
+                <button
+                  className="btn-delate"
+                  onClick={() => delateNote(note.id)}
+                >
+                  {' '}
+                  Eliminar
+                </button>
+                <button
+                  className="btn-edit"
+                  onClick={() => setNotaGuardada(note)}
+                >
+                  Editar
+                </button>
+                {/* </div> */}
+              </p>
+            </div>
+            <br />
+            {/* <button className="btn-delate" onClick={() => delateNote(note.id)}>
+            Eliminar
+          </button>
+          <button className="edit" onClick={() => setNotaGuardada(note)}>
+            Editar
+          </button> */}
           </div>
-          <div className="btn-content">
-            <button className="btn-delate" onClick={() => delateNote(note.id)}>
-              Eliminar
-            </button>
-            <button className="edit" onClick={() => setNotaGuardada(note)}>
-              Editar
-            </button>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   );
 }
