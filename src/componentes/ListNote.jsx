@@ -71,7 +71,7 @@ export function ListNotes({ uid }) {
       />
       <br />
       <br />
-      <div className="pruebita">
+      <div className="divContainer">
         {lista.map((note) => (
           <div key={note.id} className="content">
             <div className="divNota">

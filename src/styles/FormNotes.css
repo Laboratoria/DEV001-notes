@@ -15,8 +15,7 @@
 
 
 .spaceNote {
-  /* display: grid;
-  place-items: center; */
+  display:none;
   align-items: center;
   padding: 22%;
   border-radius: 5%;

@@ -6,6 +6,8 @@
   background-image: url('/src/imagen/fondo.jpg');
   background-repeat: no-repeat;
   background-size:cover;  
+  min-width: 100vw;
+  min-height:100vh;
   
 } 
 /* -----------------------------PALETA DE COLORES ------------------------------- */
@@ -22,15 +24,15 @@
 /* -------------------------------ESTILOS LOGIN ---------------------------------- */
 .titulo {
   text-align: center;
-  font-size: 30px;
+  font-size: 2.8vh;
   color: black;
 }
 .txt {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: black;
   /* background:#6587a5; */
-font-size: 25px; 
-line-height: 1.5;
+font-size: 2.3vh; 
+line-height: 1.3;
 text-align: center;
 }
 
@@ -41,163 +43,87 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 position: absolute;
-top: 50%;
+top: 45%;
 left: 50%;
 transform: translate(-50%, -50%);
 color: white;
 background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.1));
-width: 30vw;
-padding: 5vh;
+width: 45vw;
+padding: 6vh;
 border-radius: 10px;
 box-shadow: 5px 5px 10px #230704;
 
 }
-/* 
-/* a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-} */
+
 a:hover {
   color: #535bf2;
 }
 .logo{
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
 }
 
 
 
-h1 {
-  font-size: 3.2em;
+/* h1 {
+  font-size: 3vh;
   line-height: 1.1;
-}
+} */
  /* Estilo de botones  */ 
 .btnGoogle {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1.3em;
-  font-weight: 500;
+  font-size: 2vh;
+  font-weight: 250em;
   font-family: inherit;
   background-color:#d2ba47;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+.loading{
+  /* position: absolute; */
+  justify-content: center;
+  text-align: center;
+}
 
 
+@media (min-width: 800px) {
+
+  .contenido1 {
+
+      width: 35vw;
+      padding: 7vh;
+    }
 
 
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.logo {
+  width: 95%;
+  height: 95%;
+}
+}
+
+@media (min-width: 1200px) {
+.logo {
+    width: 75%;
+    height: 75%;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-/* } */
 
-/* ---------------------------- ESTILOS MURO --------------------------------  */
-/* .content{
-  /* display: flex;
-  position: relative;
-  flex-direction:row;
-  align-items: end;
-  word-wrap: break-word;
-    overflow: auto; */
-    /* color: #6587a5;
-
-
-} */
-/* .divHijo{
-display: flex;
-position: absolute;
-  flex-direction: row;
-  margin: auto;
-  left: 0;
-  right: 0;
-
-
-} */
-/* .contenido-nota { */
-  /* padding: 4em; */
-  /* padding: 10px;
-  margin: 10px;
-  text-align: justify;
+    .titulo {
+      font-size: 3.5vh;
   
-border: transparent;
-background-color:#e7e1a9;
-border-radius: 10px;
-color: black;
-
-font-size: 16px;
-word-wrap:break-word;
-overflow: auto; */
-/* word-break: break-all; */
-
-
-/* }
-
-.btn-content{
-  display: flex;
-  position:absolute;
-}
-.btn-delate,
-.edit,
-.btn {
-  font-size: 15px;
-  border-radius: 2px;
-  border: 2px solid var(--mar);
-
+    }
+  
+    .txt {
+      font-size: 3.1vh;
+      line-height: 1.3;
+    }
+        .btnGoogle {
+          
+          padding: 0.5em 1em;
+          font-size: 2.7vh;
+        
+        }
 
 }
-
-.btn-delate,
-.edit,
-.btn:hover {
-  cursor: pointer;
-  box-shadow: 0 12px 16px 0 rgba(39, 133, 155, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-.spaceNote{
-  padding: 15%;
-  border-radius: 5%;
-
-}
-
-.signOut{
-border-radius: 8px;
-position: relative;
-top: 2%;
-left: 130%;
-border: 1px solid transparent;
-padding: 0.6em 1.2em;
-font-size: 1.3em;
-font-weight: 500;
-font-family: inherit;
-background-color:#d2ba47;
-cursor: pointer;
-transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: black;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */ 
-
-/* signOut:hover {  
-border-color: black;
-} */
-/* -----------------------------NOTAS ---------------- */
-/* .body-nota{
-  display: flex;
-  flex-direction: row;
-  background-color: #6587a5;
-} */
+/* ---------------------------- ESTILOS MURO --------------------------------  */

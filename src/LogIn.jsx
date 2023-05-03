@@ -31,7 +31,7 @@ const Login = () => {
           tareas pendientes, lista de compras etcétera <br />
           Yo te ayudo!
         </p>
-
+        <br />
         <button className="btnGoogle" onClick={LoginGogle}>
           Ingresa con Google
         </button>

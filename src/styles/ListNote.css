@@ -6,6 +6,7 @@
 .contenido-nota {
   /* position: relative;
   left: 0px; */
+  box-shadow: 7px 5px grey;
   padding: 1em;
   margin: 5px;
   text-align: justify;
@@ -38,17 +39,6 @@ float: right;
   color:darkgoldenrod 
 }
 
-.pruebita{
-  /* background-color: aqua;
-  display: flex; */
-
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: 100px, auto; */
-
-}
-
 @media only screen and (min-width:577px) {
 
   .contenido-nota {
@@ -56,7 +46,7 @@ float: right;
       grid-column: 1/3;
       grid-row: 1;
 }
-.pruebita {
+.divContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
@@ -72,7 +62,7 @@ float: right;
       grid-row: 1;
     }
   
-    .pruebita {
+    .divContainer {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-gap: 10px;

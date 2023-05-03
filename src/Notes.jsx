@@ -51,7 +51,12 @@ const Notes = () => {
       </button>
 
       {/* <ListNotes /> */}
-      {uid ? <ListNotes uid={uid} /> : <span>cargando....</span>}
+      {/* {uid ? <ListNotes uid={uid} /> : <span>cargando....</span>} */}
+      {uid ? (
+        <ListNotes uid={uid} />
+      ) : (
+        <img className="loading" src="src\imagen\Spin.gif" />
+      )}
     </React.Fragment>
   );
 };
