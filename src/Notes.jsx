@@ -4,6 +4,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { funcSignOut } from './Firebase/func';
 // import { FormNotes } from "./componentes/FormNotes";
 import { ListNotes } from './componentes/ListNote';
+// import '../src/styles/FormNotes.css';
 
 const Notes = () => {
   let [name, setName] = useState('');
@@ -43,15 +44,15 @@ const Notes = () => {
 
   return (
     <React.Fragment>
-      <h2 className="titulo">Bienvenida {name}!</h2>
-
-      <button className="signOut" onClick={logOut}>
-        {' '}
-        Cerrar sesión
-      </button>
-
-      {/* <ListNotes /> */}
-      {/* {uid ? <ListNotes uid={uid} /> : <span>cargando....</span>} */}
+      <div className="header">
+        <div>
+          <button className="signOut" onClick={logOut}>
+            {' '}
+            Cerrar sesión
+          </button>
+        </div>
+        <h2 className="titulo">Bienvenida {name}!</h2>
+      </div>
       {uid ? (
         <ListNotes uid={uid} />
       ) : (

@@ -58,7 +58,7 @@ export function ListNotes({ uid }) {
     // el array vacio indica que esta funcion se debe ejecutar una vez despues que el componente es montado
   }, []);
   // Funcion para eliminar Notas
-  const delateNote = async (id) => {
+  const deleteNote = async (id) => {
     await deleteDoc(doc(db, 'usuarios', id));
   };
 
@@ -83,7 +83,7 @@ export function ListNotes({ uid }) {
                 {/* <div className="divBtnNota"> */}
                 <button
                   className="btn-delate"
-                  onClick={() => delateNote(note.id)}
+                  onClick={() => deleteNote(note.id)}
                 >
                   {' '}
                   Eliminar
@@ -98,7 +98,7 @@ export function ListNotes({ uid }) {
               </p>
             </div>
             <br />
-            {/* <button className="btn-delate" onClick={() => delateNote(note.id)}>
+            {/* <button className="btn-delate" onClick={() => deleteNote(note.id)}>
             Eliminar
           </button>
           <button className="edit" onClick={() => setNotaGuardada(note)}>

@@ -1,49 +1,46 @@
 .btn-content {
-  display: flex; 
+  display: flex;
   position: absolute;
 }
 
 .btn-delate,
 .edit,
 .btn {
+  /* background-color: aquamarine; */
   font-size: 15px;
+  color: black;
   border-radius: 2px;
   border: 2px solid var(--mar);
-
-
 }
-
-
 .spaceNote {
-  display:none;
-  align-items: center;
-  padding: 22%;
-  border-radius: 5%;
-  justify-content: center;
-
+  font-size: 1rem;
+  padding: 10%;
+  position: static;
+  top: 55%;
 }
+
 .formTex {
-  display:grid;
+  display: grid;
   place-items: center;
 }
-.btn-content {
-display: flex;
-
-} 
 
 .signOut {
-  border-radius: 4px;
-  /* position: relative; */
-  /* top: 2%; */
-  /* left: 130%; */
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1.3em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #d2ba47;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  float: right;
+  background-color: transparent;
+  background-image: url('../assets/logOut.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  transition: border-color 0.25s;
+  border: 1px solid transparent;
+  font-size: 1.2em;
+  color: transparent;
+  cursor: pointer;
 }
 
 button:hover {
@@ -54,17 +51,44 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-
-@media only screen and (min-width:577px) {
-
-.spaceNote {
-
-    padding:150px;
-  }
-
-
-  
+.btn {
+  background-color: #d2ba47;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 5px;
 }
 
-/* @media (min-width: 1281px){} */
+.divBtn button:first-child {
+  margin-right: 10px;
+}
+
+.divBtn button:last-child {
+  margin-left: 10px;
+}
+
+@media (min-width: 900px) {
+  .spaceNote {
+    padding: 8%;
+  }
+  .signOut {
+    background-color: #d2ba47;
+    background-image: none;
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 0.4em 1em;
+    font-size: 1.2em;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+}
+
+@media (min-width: 1200px) {
+  .spaceNote {
+    padding: 5%;
+  }
+}

@@ -24,7 +24,7 @@ const Login = () => {
     <React.Fragment>
       <div className="contenido1">
         <img className="logo" alt="logo" src="../src/assets/logo.png" />
-        <h2 className="titulo">Iniciar sesión</h2>
+        <h2 className="tituloI">Iniciar sesión</h2>
         <p className="txt">
           {' '}
           Anota todo lo que no quieres olvidar <br />

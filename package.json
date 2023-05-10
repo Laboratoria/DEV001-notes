@@ -9,8 +9,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "babel-jest": "^29.5.0",
     "@testing-library/react": "^14.0.0",
+    "babel-jest": "^29.5.0",
     "firebase": "^9.17.1",
     "jest-environment-jsdom": "^29.5.0",
     "prop-types": "^15.8.1",
@@ -23,6 +23,7 @@
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
+    "@iconify/react": "^4.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.27",
