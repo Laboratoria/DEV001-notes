@@ -2,14 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { funcSignOut } from './Firebase/func';
-// import { FormNotes } from "./componentes/FormNotes";
 import { ListNotes } from './componentes/ListNote';
-// import '../src/styles/FormNotes.css';
 
 const Notes = () => {
   let [name, setName] = useState('');
   let [uid, setUid] = useState('');
-
   const auth = getAuth();
 
   useEffect(() => {

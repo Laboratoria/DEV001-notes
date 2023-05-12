@@ -2,11 +2,9 @@
   display: flex;
   position: absolute;
 }
-
 .btn-delate,
 .edit,
 .btn {
-  /* background-color: aquamarine; */
   font-size: 15px;
   color: black;
   border-radius: 2px;
@@ -18,12 +16,10 @@
   position: static;
   top: 55%;
 }
-
 .formTex {
   display: grid;
   place-items: center;
 }
-
 .signOut {
   position: fixed;
   top: 10px;
@@ -42,11 +38,9 @@
   color: transparent;
   cursor: pointer;
 }
-
 button:hover {
   border-color: black;
 }
-
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -57,16 +51,14 @@ button:focus-visible {
   border: 1px solid transparent;
   cursor: pointer;
   padding: 5px;
+  font-size: 1em;
 }
-
 .divBtn button:first-child {
   margin-right: 10px;
 }
-
 .divBtn button:last-child {
   margin-left: 10px;
 }
-
 @media (min-width: 900px) {
   .spaceNote {
     padding: 8%;
@@ -86,9 +78,16 @@ button:focus-visible {
     transition: border-color 0.25s;
   }
 }
-
 @media (min-width: 1200px) {
   .spaceNote {
-    padding: 5%;
+    padding: 10lvh;
+  }
+
+  .signOut {
+    font-size: 1.5em;
+  }
+  .btn {
+    font-size: 21px;
+    padding: 10px;
   }
 }

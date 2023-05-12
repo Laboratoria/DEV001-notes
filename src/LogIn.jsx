@@ -1,11 +1,7 @@
 import React from 'react';
-// import {  context} from "./context/context";
 import { loginWhitGoogle } from './Firebase/func';
 import { useNavigate } from 'react-router-dom';
 import './styles/index.css';
-
-// import { logo } from "../assets/logo.jpg";
-// import './styles/login.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,9 +11,7 @@ const Login = () => {
         console.log(credentials.user);
         navigate('/notes');
       })
-      .catch((error) => {
-        // console.log(error);
-      });
+      .catch((error) => {});
   }
 
   return (
