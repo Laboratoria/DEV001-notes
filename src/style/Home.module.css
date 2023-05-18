@@ -1,0 +1,114 @@
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    color:#FFB6D5;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 38px;
+}
+.carroviaje{
+    width: 35%;
+}
+.login{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.startText{
+    color:#FFB6D5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+.btnGoggle{
+    width: 129px;
+    height: 31px;
+    margin:20px;
+    border-radius: 15px;
+    background-color: #FFB6D5;
+    border:none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+@media (min-width: 900px) and (max-width: 1094px) {
+    /* for desktop*/
+    .carroviaje{
+        width: 35%;
+    } 
+}
+
+@media (min-width: 1095px) and (max-width: 2047px) {
+    /* for desktop*/
+  
+    .carroviaje{
+        width: 30%;
+    }
+    .login{
+        margin-top: 40px;
+    }
+    .title{
+        margin-top: 100px;
+    }
+   
+}
+@media  (min-width: 2048px)and (max-width: 3248px){
+    /* for desktop big*/
+    .carroviaje{
+        width: 20%;
+    }
+    .title{
+        margin-top: 100px;
+    }
+    .login{
+        margin-top: 50px;
+    }
+}
+
+@media  (min-width: 320px) and (max-width: 767px) {
+    .title{
+        font-size: 25px;
+        margin-top: 71px;
+    }
+    .carroviaje{
+        width: 50%;
+    
+    }
+    .btnGoggle{
+        width: 129px;
+        height: 31px;
+        margin: 4px;
+        font-size: 15px;
+    }
+    .startText{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+    }
+    .login{
+        flex-direction: column;
+    }
+   
+}
+@media  (min-width: 584px) and (max-width: 767px) {
+    .title{
+        font-size: 25px;
+        margin-top: 71px;
+    }
+    .carroviaje{
+        width: 40%;
+    
+    }
+    .btnGoggle{
+        margin: 4px;
+        font-size: 15px;
+    }
+    .startText{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+    }
+   
+}
